@@ -57,7 +57,7 @@
     "url": "https://sportunterricht.eu"
   },
   "image": "https://sportunterricht.eu/problemorientierung/problemorientierung.png",
-  "version": "1.3.2"
+  "version": "1.3.3"
 }
 </script>
 <style>
@@ -185,6 +185,18 @@
   .callout .big{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:800;font-size:1.3rem;line-height:1.3;color:var(--ink);margin:0 0 .6rem;letter-spacing:-.01em}
   .callout p{color:var(--ink-soft);font-size:1rem;margin:0}
   @media(max-width:560px){.callout .big{font-size:1.14rem}}
+  /* Einleitungs-Box: Überschrift + Teaser + Ausklappleiste als eine Einheit */
+  .intro-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.8rem 1.9rem;box-shadow:var(--shadow);margin-bottom:1.9rem}
+  @media(max-width:560px){.intro-box{padding:1.4rem 1.3rem}}
+  .intro-box .sec-label{margin-bottom:.5rem}
+  .intro-box h2{margin-top:0;margin-bottom:1rem}
+  .intro-box .teaser{margin-bottom:1.2rem}
+  .intro-box .teaser .more{color:var(--flame-deep);font-weight:700;font-style:normal}
+  .intro-box .grundidee-acc{background:transparent;border:0;box-shadow:none;border-radius:0;margin:0;overflow:visible}
+  .intro-box .grundidee-acc>summary{background:var(--sand);border-radius:10px;padding:.8rem 1rem}
+  .intro-box .grundidee-acc>summary:hover{background:var(--blue-2)}
+  .intro-box .grundidee-acc[open]>summary{border-bottom:0;margin-bottom:.6rem}
+  .intro-box .accbody{padding:.2rem .1rem 0}
 
   .divide{border:0;border-top:1px solid var(--line);margin:0}
 
@@ -440,14 +452,15 @@
 <!-- GRUNDIDEE -->
 <section id="idee">
   <div class="wrap col">
+    <div class="intro-box">
     <p class="sec-label">Worum es geht</p>
     <h2>Eine Stunde „von hinten“ planen — der gewünschte Output bestimmt die Herangehensweise!!</h2>
-    <p class="muted">Der Ausgangspunkt jeder Planung ist nicht die Frage: „Was machen wir heute?“, sondern: „Was soll hinten bei der Stunde herauskommen?“ Oder, etwas salopper gefragt: „Was steht am Ende unterm Strich?“</p>
+    <p class="muted teaser">Der Ausgangspunkt jeder Planung ist nicht die Frage: „Was machen wir heute?“, sondern: „Was soll hinten bei der Stunde herauskommen?“ Oder, etwas salopper gefragt: „Was steht am Ende unterm Strich?“ Der Unterricht wird deshalb um ein fachlich bedeutsames Problem, eine Lernfrage oder eine konkrete sportpraktische Herausforderung herum organisiert. Deren Bearbeitung soll zu einer wahrnehmbaren Verbesserung, einer nachvollziehbaren Erkenntnis oder einer begründeteren sportlichen Entscheidung führen. Reine Übungs- oder Spielphasen, bei denen nicht erkennbar wird, was die Schülerinnen und Schüler dadurch besser können, genauer verstehen oder&#8239;<span class="more">…</span></p>
 
     <details class="acc grundidee-acc">
       <summary><span class="accnum">＋</span>Zum Weiterlesen ausklappen<span class="chev">⌄</span></summary>
       <div class="accbody">
-    <p class="muted">Der Unterricht wird um ein fachlich bedeutsames Problem, eine Lernfrage oder eine konkrete sportpraktische Herausforderung herum organisiert. Deren Bearbeitung soll zu einer wahrnehmbaren Verbesserung, einer nachvollziehbaren Erkenntnis oder einer begründeteren sportlichen Entscheidung führen. Reine Übungs- oder Spielphasen, bei denen nicht erkennbar wird, was die Schülerinnen und Schüler dadurch besser können, genauer verstehen oder bewusster wahrnehmen, reichen dafür auf Dauer nicht aus.</p>
+    <p class="muted">…&#8239;bewusster wahrnehmen, reichen dafür auf Dauer nicht aus.</p>
     <p class="muted">Konkret heißt das: Am Ende der Stunde sollte ein Ergebnis stehen, das die Lernenden mitnehmen können. Etwas zugespitzt muss sich die Lehrkraft fragen:</p>
     <p class="pull">Warum hat es sich gelohnt, dass diese Schülerinnen und Schüler eine Stunde ihres Lebens in diesen Unterricht investiert haben?</p>
     <p class="muted">Lautet die Antwort allein: „Sie hatten Spaß, haben sich wohlgefühlt, sich bewegt und eine freudvolle Stunde erlebt“, dann kann das im Einzelfall durchaus sinnvoll und wertvoll sein. Freude an Bewegung, Begeisterung und gemeinsames sportliches Handeln sind wichtige Bestandteile des Sportunterrichts und häufig sogar Voraussetzungen für nachhaltiges Lernen. Als langfristig tragfähige Grundlage eines erziehenden und kompetenzorientierten Sportunterrichts reichen sie allein jedoch nicht aus – insbesondere am Gymnasium und in der gymnasialen Oberstufe.</p>
@@ -459,6 +472,7 @@
     <p class="muted">So wird der rote Faden nicht nur von der Lehrkraft geplant, sondern für die Lernenden sichtbar geschlossen.</p>
       </div>
     </details>
+    </div>
 
     <div class="callout">
       <p class="k">Wichtig — bitte beachten</p>
@@ -907,7 +921,7 @@
     </div>
     <div class="foot-meta">
       © 2026 Straight&#8202;X&#8202;edge Media<br>
-      Grafik: Ralf Duwenbeck · v 1.3.2
+      Grafik: Ralf Duwenbeck · v 1.3.3
     </div>
     <nav class="foot-links" aria-label="Rechtliches und Unterstützung">
       <button type="button" data-modal="modal-impressum" aria-haspopup="dialog">Impressum &amp; Nutzung</button>
