@@ -57,7 +57,7 @@
     "url": "https://sportunterricht.eu"
   },
   "image": "https://sportunterricht.eu/problemorientierung/problemorientierung.png",
-  "version": "1.1.2"
+  "version": "1.2.0"
 }
 </script>
 <style>
@@ -276,6 +276,44 @@
   .tip .tll::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--flame)}
   .tip b{color:#fff}
   @media(max-width:560px){.tip{left:auto;right:0}.tip::after{left:auto;right:24px}}
+  .hero-card .term{color:var(--flame);border-bottom-color:rgba(255,106,26,.6)}
+  .hero-card .tip{color:#e7eef5}
+
+  /* ---------- ACCORDION (einklappbar) ---------- */
+  .acc{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);margin:0 0 1rem;overflow:hidden}
+  .acc[open]{border-color:var(--line-strong)}
+  .acc>summary{list-style:none;cursor:pointer;padding:1.15rem 1.4rem;display:flex;align-items:center;gap:.9rem;font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:1.02rem;color:var(--ink)}
+  .acc>summary::-webkit-details-marker{display:none}
+  .acc>summary:hover{background:var(--sand)}
+  .acc>summary .accnum{flex:0 0 auto;width:32px;height:32px;border-radius:8px;background:var(--blue-2);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem}
+  .acc>summary .chev{margin-left:auto;color:var(--ink-soft);transition:transform .2s ease;font-size:1.1rem}
+  .acc[open]>summary .chev{transform:rotate(180deg)}
+  .acc[open]>summary{border-bottom:1px solid var(--line)}
+  .accbody{padding:1.2rem 1.4rem 1.4rem;color:var(--ink-soft);font-size:1rem}
+  .accbody>*:first-child{margin-top:0}
+  .accbody p{margin:0 0 .9rem}
+  .accbody ul{margin:.3rem 0 1rem;padding-left:1.15rem}
+  .accbody li{margin:.34rem 0}
+  .accbody h4{font-family:"Helvetica Neue",Arial,sans-serif;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-deep);margin:1.3rem 0 .5rem}
+  .accbody .q{font-style:italic;color:var(--ink);border-left:3px solid var(--flame);padding-left:.9rem;margin:.9rem 0}
+  .accbody .q b{font-style:normal}
+  .lead-in{color:var(--ink-soft);margin:0 0 1.4rem}
+
+  /* Karten-Raster (3-spaltig) für Zeit-Begriffe */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:.4rem 0 1rem}
+  @media(max-width:720px){.grid3{grid-template-columns:1fr}}
+  .zcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.3rem;box-shadow:var(--shadow)}
+  .zcard .zk{font-family:"Helvetica Neue",Arial,sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--flame-deep);margin-bottom:.4rem}
+  .zcard h4{margin:0 0 .4rem;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;color:var(--ink);text-transform:none;letter-spacing:0}
+  .zcard p{margin:0;font-size:.94rem;color:var(--ink-soft)}
+  .zcard.accent{background:linear-gradient(150deg,var(--navy),var(--navy-2));border-color:rgba(255,106,26,.3)}
+  .zcard.accent .zk{color:var(--flame)}
+  .zcard.accent h4{color:#fff}
+  .zcard.accent p{color:#c7d6ea}
+
+  /* Formel-Band */
+  .formula{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:800;color:var(--ink);text-align:center;background:var(--sand);border:1px dashed var(--line-strong);border-radius:12px;padding:1rem 1.2rem;margin:1.2rem 0;letter-spacing:.01em}
+  .formula b{color:var(--flame-deep)}
 
   /* reveal */
   .rise{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
@@ -292,8 +330,10 @@
     <div class="nav-links">
       <a href="#idee">Grundidee</a>
       <a href="#tisch">Tischgespräch</a>
-      <a href="#grafik">Grafik</a>
+      <a href="#leisen">Leisen</a>
       <a href="#phasen">Phasen</a>
+      <a href="#lernprodukt">Lernprodukt</a>
+      <a href="#bewegung">Bewegung</a>
       <a href="#prinzip">Prinzipien</a>
       <a href="#grenzen">Reichweite</a>
     </div>
@@ -305,7 +345,7 @@
   <div class="hero-backdrop" aria-hidden="true"></div>
   <div class="wrap hero-in">
     <div class="hero-card">
-      <p class="eyebrow">Erziehender Sportunterricht · Planungsmodell</p>
+      <p class="eyebrow">Erziehender Sportunterricht · <span class="term" tabindex="0" role="button" aria-describedby="tip-leisen">Planungsmodell<span class="tip" role="tooltip" id="tip-leisen"><strong>Theoretischer Bezug</strong><span class="tl">Eine sportdidaktische Konkretisierung des Lehr-Lern-Modells nach Josef Leisen — dessen Lernlogik auf die Bedingungen des Sportunterrichts übertragen.</span></span></span></p>
       <h1>Der <span class="h1-accent">problemorientierte</span> Stundenaufbau — rückwärts geplant.</h1>
       <p class="lede">Eine mögliche Art, eine Sportstunde anzulegen: nicht von der Aktivität her, sondern vom Ergebnis her. Ausgangspunkt ist ein gedankliches Tischgespräch — die Frage, was ein Kind abends zu Hause über die Stunde erzählen könnte.</p>
       <div class="hero-cta">
@@ -344,8 +384,11 @@
     <div class="tisch rise">
       <p class="k">Ausgangspunkt der Planung</p>
       <h3>Das Tischgespräch</h3>
-      <p>Stell dir vor, die Schülerin oder der Schüler wird abends beim Abendbrot gefragt, was sie oder er heute nach der Stunde mehr weiß, besser kann, welche Erkenntnis erarbeitet wurde, welches Problem gelöst wurde. Die hartnäckige Mutter, der hartnäckige Vater gibt sich nicht mit „Wir haben geübt“ zufrieden — sondern fordert ein echtes Ergebnis ein.</p>
+      <p>Stell dir vor, die Schülerin oder der Schüler wird abends beim Abendbrot gefragt, was sie oder er heute nach der Stunde mehr weiß, besser kann, welche Erkenntnis erarbeitet wurde, welches Problem gelöst wurde. Die hartnäckige Mutter, der hartnäckige Vater gibt sich nicht mit „Wir haben geübt“ zufrieden — sondern fordert ein echtes Ergebnis ein. Diese griffige Kernidee — die <b>„Abendbrotfrage“</b> — zwingt die Planung, vom Ergebnis her zu denken.</p>
       <p class="quote">Also nicht: „Wir haben überlegt, warum Kommunikation beim Basketball wichtig ist.“ Sondern: Wie genau geht es jetzt besser? Wo lagen die Probleme? Nenne vier Aspekte.</p>
+      <p>Ein tragfähiges Ergebnis klänge eher so:</p>
+      <p class="quote">„Wir haben herausgefunden, dass Kommunikation im Basketball dann wirkt, wenn sie früh, eindeutig und situationsbezogen ist. Im zweiten Spiel haben wir dadurch freie Räume schneller erkannt und weniger Bälle verloren.“</p>
+      <p>Dabei zählen zwei Dimensionen zusammen: Was können die Lernenden <b>sichtbar besser tun</b> — und was können sie darüber <b>erklären, begründen, beurteilen oder auf neue Situationen übertragen</b>? Ein Bewegungsprinzip lässt sich korrekt erklären, ohne es zu können — und umgekehrt. Ein voller Lernertrag meint beides.</p>
       <p>Von diesem Anspruch aus wird die ganze Stunde rückwärts geplant. In der Praxis heißt das vier Leitfragen — sie strukturieren zugleich die metakognitive Abschlussphase:</p>
       <ol>
         <li>Worum ging es am Anfang?</li>
@@ -354,6 +397,49 @@
         <li>Welche drei bis vier Kernpunkte nehmen wir mit?</li>
       </ol>
     </div>
+  </div>
+</section>
+
+<hr class="divide">
+
+<!-- ANSCHLUSS AN LEISEN -->
+<section id="leisen">
+  <div class="wrap col">
+    <p class="sec-label">Theoretischer Bezug</p>
+    <h2>Anschluss an die Lernlinie nach Leisen</h2>
+    <p class="lead-in">Die Spirale erfindet nichts Neues — sie überträgt die Lernlogik des <b>Lehr-Lern-Modells nach Josef Leisen</b> in die Sprache und die Handlungssituationen des Sportunterrichts. Leisen beschreibt Lernen als strukturierte, aber ausdrücklich nicht starr lineare <b>Lernlinie</b>. Sie versteht sich als fachbezogene Konkretisierung, nicht als Gegenkonzept.</p>
+
+    <details class="acc">
+      <summary><span class="accnum">L</span>Die Lernlinie — die Schritte<span class="chev">⌄</span></summary>
+      <div class="accbody">
+        <p>Die Lernenden kommen in einem Lernkontext an und durchlaufen — wiederholbar, miteinander verbindbar, über mehrere Abschnitte verteilbar:</p>
+        <ul>
+          <li><b>Ankommen</b> im Lernkontext</li>
+          <li><b>Vorstellungen entwickeln</b> zu einer Problemstellung</li>
+          <li><b>Lernmaterial bearbeiten</b> und ein <b>Lernprodukt</b> erzeugen</li>
+          <li>Lernprodukte <b>vergleichen und diskutieren</b></li>
+          <li>Erkenntnisse <b>sichern und vernetzen</b></li>
+          <li>Gelerntes <b>anwenden und transferieren</b></li>
+        </ul>
+        <p>Die Lehrkraft gestaltet dafür Lernumgebungen, Aufgaben, Materialien und Methoden und begleitet den Prozess durch Moderation, Diagnose und Rückmeldung.</p>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><span class="accnum">?</span>Die Übergänge, die im Sport entscheidend sind<span class="chev">⌄</span></summary>
+      <div class="accbody">
+        <p>Die Spiralform macht besonders jene Gelenkstellen sichtbar, die in der Unterrichtspraxis über den Lernerfolg entscheiden:</p>
+        <ul>
+          <li>Was geschieht nach einem ersten praktischen Lösungsversuch?</li>
+          <li>Woran wird erkannt, ob das Problem bereits gelöst wurde?</li>
+          <li>Wie wird aus einer Beobachtung eine Erkenntnis?</li>
+          <li>Wann muss eine Aufgabenstellung verändert werden?</li>
+          <li>Wie führt eine Reflexion wieder zurück in das Bewegungshandeln?</li>
+          <li>Wie wird am Ende der Bezug zur ursprünglichen Problemfrage hergestellt?</li>
+        </ul>
+        <p>Sportliches Lernen verläuft selten geradlinig vom Problem zur Lösung. Erproben, beobachten, reflektieren, verändern, erneut prüfen — genau diese wiederholte Verbindung von Handeln, Wahrnehmen, Reflektieren, Entscheiden und erneutem Handeln ist der Kern des Modells.</p>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -369,8 +455,38 @@
       <div class="fig-frame" id="figBtn" role="button" tabindex="0" aria-label="Grafik vergrößern">
         <img src="problemorientierung.png" alt="Prinzipielle Struktur von Unterrichtsstunden im erziehenden Sportunterricht: fünf Phasen von Einstieg und Problemorientierung über Reflexion, Entscheidung und Abschluss bis zum Ausblick, mit dem Tischgespräch als Ausgangspunkt der Rückwärtsplanung.">
       </div>
-      <figcaption>Prinzipielle Struktur von Unterrichtsstunden im erziehenden Sportunterricht · nach Ralf Duwenbeck</figcaption>
+      <figcaption>Prinzipielle Struktur von Unterrichtsstunden im erziehenden Sportunterricht · nach Ralf Duwenbeck<br>Kein starres Zeitraster — gemeint sind Lerneinheiten, vom Stundenabschnitt bis zur Unterrichtsreihe.</figcaption>
     </figure>
+  </div>
+</section>
+
+<hr class="divide">
+
+<!-- SPORTPRAKTISCHES LERNPRODUKT -->
+<section id="lernprodukt">
+  <div class="wrap col">
+    <p class="sec-label">Der Kern im Sport</p>
+    <h2>Das sportpraktische Lernprodukt</h2>
+    <p class="lead-in">Die Bearbeitung eines Problems soll ein <b>Lernprodukt</b> hervorbringen — im Sport meist <b>performativ</b>: Es zeigt sich zuerst im Handeln. Es muss aber so beobachtbar und beschreibbar werden, dass die Lernenden es vergleichen, beurteilen und weiterentwickeln können. Ein Text, ein Plakat oder eine Präsentation sind dafür nicht nötig.</p>
+
+    <details class="acc" open>
+      <summary><span class="accnum">✱</span>Was ein Lernprodukt im Sport sein kann<span class="chev">⌄</span></summary>
+      <div class="accbody">
+        <ul>
+          <li>eine sichtbar veränderte Bewegungsausführung</li>
+          <li>eine gemeinsam entwickelte taktische Lösung</li>
+          <li>ein funktionierendes Zusammenspiel</li>
+          <li>eine neue Spielregel</li>
+          <li>eine gestaltete Bewegungsfolge</li>
+          <li>ein begründeter Trainingsplan</li>
+          <li>ein Beobachtungsbogen mit erarbeiteten Qualitätskriterien</li>
+          <li>eine Demonstration verschiedener Lösungswege</li>
+          <li>eine verbesserte Entscheidung in einer Spielsituation</li>
+        </ul>
+        <p class="q"><b>Nicht nur:</b> Was haben die Schülerinnen und Schüler getan? <b>Sondern:</b> Was ist durch dieses Handeln entstanden, sichtbar geworden oder besser gelungen?</p>
+        <p>„Sie spielen Basketball“, „sie sammeln Bewegungserfahrungen“, „sie üben den Hochsprung“ benennen zunächst nur Tätigkeiten — noch keinen Lernertrag. Entscheidend ist, was nach dem Spielen, Erproben oder Üben anders ist als vorher.</p>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -380,8 +496,8 @@
 <section id="phasen">
   <div class="wrap col">
     <p class="sec-label">Ablauf der Durchführung</p>
-    <h2>Die fünf Phasen</h2>
-    <p class="muted" style="margin-bottom:2rem">In der Durchführung von oben nach unten gelesen. Jede Phase hat eine Funktion im roten Faden — von der Irritation am Einstieg bis zur Sicherung und zum Transfer.</p>
+    <h2>Fünf Phasen — als Spirale gelesen</h2>
+    <p class="muted" style="margin-bottom:2rem">In der Durchführung von oben nach unten gelesen. Die fünf Phasen sind keine feste Taktung, sondern <b>Schleifen</b>: handeln, wahrnehmen, reflektieren, entscheiden — und erneut handeln. Jede Phase hat eine Funktion im roten Faden, von der Irritation am Einstieg bis zur Sicherung und zum Transfer.</p>
 
     <div class="phases">
       <article class="phase p1 rise">
@@ -401,7 +517,7 @@
         <div class="num">2</div>
         <div>
           <h3>Erste Erarbeitung & Reflexion</h3>
-          <p>Auf eine klare Aufgabenstellung folgt die erste Erarbeitung (EA 1): Die Lerngruppe bearbeitet das Problem, häufig in verschiedenen Arbeitsgruppen. Schon währenddessen wird reflektiert — mitten im Tun („reflection in action“). Im anschließenden Rückblick (RP 1, „reflection on action“) klären zwei Leitfragen: Was ist gerade genau passiert? Konntet ihr die Aufgabe, unser Problem, so lösen wie ihr solltet?</p>
+          <p>Auf eine klare Aufgabenstellung folgt die erste Erarbeitung (EA 1): Die Lerngruppe bearbeitet das Problem, häufig in verschiedenen Arbeitsgruppen. Schon währenddessen wird reflektiert — mitten im Tun („reflection in action“). Im anschließenden Rückblick (RP 1, „reflection on action“) klären zwei Leitfragen: Was ist gerade genau passiert? Konntet ihr die Aufgabe, unser Problem, so lösen wie ihr solltet? Reflexion ist dabei kein Endpunkt, sondern Gelenkstelle: Sie fragt immer auch <b>„Was folgt daraus für den nächsten Versuch?“</b></p>
           <div class="tags">
             <span class="tag hot">EA 1 — erste Erarbeitung</span>
             <span class="tag">reflection in action · Arbeitsgruppen</span>
@@ -414,10 +530,11 @@
         <div class="num">3</div>
         <div>
           <h3>Entscheidung / Verzweigung</h3>
-          <p>Der Knotenpunkt der Stunde. Ist das Problem gelöst, geht es zur Ergebnissicherung: „Wie genau sehen eure Ergebnisse aus?“ Ist es nur teilweise oder nicht gelöst, folgt Ursachenforschung.</p>
+          <p>Der Knotenpunkt der Stunde. Ob das Problem gelöst ist, wird an <b>transparenten Kriterien</b> entschieden — ein pauschales „Es hat funktioniert“ genügt nicht. Die Lernenden müssen erkennen können, was schon trägt, wo es hakt und woran sie das festmachen. Unser knappes <b>„Ja / Jein / Nein“</b> ist die einprägsame Kurzform genau dieser diagnostischen Entscheidung.</p>
           <div class="branch">
             <b>Ja</b> → Ergebnisse sichten, ggf. Präsentation. &nbsp;•&nbsp; <b>Jein / Nein</b> → Ursachenforschung: Was brauchen wir, um das Problem zu lösen? → zweite Erarbeitung (EA 2) mit mehr oder anderem Material, modifizierter Aufgabenstellung → erneute Reflexion (RP 2) → zurück zur Entscheidung.
           </div>
+          <p style="margin-top:.7rem;font-size:.94rem">Mögliche Konsequenzen aus der Diagnose: Lösung erneut anwenden · Kriterien präzisieren · Aufgabe vereinfachen oder erschweren · Material verändern · Gruppengröße oder Raum anpassen · neuen Beobachtungsschwerpunkt setzen · Bewegung unter veränderten Bedingungen erproben · Lösungen vergleichen.</p>
         </div>
       </article>
 
@@ -425,7 +542,7 @@
         <div class="num">4</div>
         <div>
           <h3>Abschluss / Sicherung / Anwendung</h3>
-          <p>Der wichtigste Punkt. „Machen wir einen Strich drunter!“ — Rückkehr zum Beginn: Was war unser Problem, und wie sieht die Lösung aus? Die Erkenntnisse werden auf wenige Kernpunkte gebündelt (z.&nbsp;B. drei), gesichert und angewendet.</p>
+          <p>Der wichtigste Punkt. „Machen wir einen Strich drunter!“ — Rückkehr zum Beginn: Was war unser Problem, und wie sieht die Lösung aus? Die Erkenntnisse werden auf wenige Kernpunkte gebündelt (z.&nbsp;B. drei), gesichert und angewendet. Die Bündelung geschieht <b>unter Einbezug und Dominanz der Lernenden</b>: Ein „Heute habt ihr gelernt, dass …“ der Lehrkraft genügt nicht — ohne eigene Einsicht kein Ergebnis. Die Schülerinnen und Schüler sollen selbst formulieren, demonstrieren oder belegen können, worin ihr Lernzuwachs besteht.</p>
           <div class="tags">
             <span class="tag hot">z.&nbsp;B. 3 Kernpunkte — wichtigster Punkt</span>
             <span class="tag">Sicherung</span>
@@ -448,6 +565,114 @@
         </div>
       </article>
     </div>
+  </div>
+</section>
+
+<hr class="divide">
+
+<!-- PRIMAT DER BEWEGUNG -->
+<section id="bewegung">
+  <div class="wrap col">
+    <p class="sec-label">Fachlicher Boden</p>
+    <h2>Der Primat der Bewegung</h2>
+    <p class="lead-in">Sport ist ein körperliches, handlungsorientiertes Fach. Besonders in der Sekundarstufe I gilt: Schülerinnen und Schüler sollen sich bewegen, körperlich erfahren und durch die Auseinandersetzung mit Bewegung lernen. Reflexion ist nicht deshalb wertvoll, weil lange gesprochen wird — sondern wenn sie dem weiteren Lernen erkennbar nützt.</p>
+
+    <div class="grid3">
+      <div class="zcard accent"><div class="zk">Kern</div><h4>Bewegungszeit</h4><p>Die Lernenden sind selbst motorisch tätig: spielen, laufen, springen, turnen, schwimmen, kämpfen, tanzen, gestalten, trainieren. Der unverzichtbare Kern des Fachs.</p></div>
+      <div class="zcard"><div class="zk">Fachlich</div><h4>Aktivitätszeit</h4><p>Planen, beobachten, vergleichen, Kriterien entwickeln, Regeln verändern, auf dem Spielfeld tüfteln — handlungsbezogene fachliche Lernzeit, auch ohne ständige intensive Motorik. Keine „verlorene Bewegungszeit“.</p></div>
+      <div class="zcard"><div class="zk">Sparsam</div><h4>Sitz- / Theoriezeit</h4><p>Überwiegend sitzendes, von der Lehrkraft geleitetes Gespräch; die Praxis ruht. Mitunter nötig — in der Sek I aber kurz und auf eine klare Frage konzentriert.</p></div>
+    </div>
+
+    <div class="formula">Bewegungszeit &nbsp;–&nbsp; Aktivitätszeit &nbsp;–&nbsp; gezielte <b>Reflexionszeit</b></div>
+
+    <details class="acc">
+      <summary><span class="accnum">▸</span>Aktivitätszeit — Beispiele<span class="chev">⌄</span></summary>
+      <div class="accbody">
+        <ul>
+          <li>eine Gruppe entwickelt auf dem Spielfeld eine neue Angriffsstrategie,</li>
+          <li>zwei Lernende vergleichen ihre Beobachtungen unmittelbar am Gerät,</li>
+          <li>Schülerinnen und Schüler verändern selbstständig eine Bewegungsstation,</li>
+          <li>eine Mannschaft stimmt Laufwege oder Kommunikationszeichen ab,</li>
+          <li>Lernende setzen Beobachtungskriterien während einer praktischen Erprobung ein.</li>
+        </ul>
+        <p>Gerade in der Sek I sollten Reflexionsgespräche aus der Bewegungssituation heraus entstehen und rasch wieder in sie zurückführen — über Leitfragen, kurze Partnergespräche, Beobachtungsaufträge, Karten, Standbilder, Demonstrationen oder unmittelbare Wiederholungen.</p>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><span class="accnum">↧</span>„Deep Dive“ in der gymnasialen Oberstufe<span class="chev">⌄</span></summary>
+      <div class="accbody">
+        <p>Der Primat der Bewegung verbietet keine längere Auseinandersetzung. In der Oberstufe kann eine vertiefte Analyse fachlich nötig sein — im Einzelfall auch zulasten unmittelbarer Bewegungszeit, sofern sie erkenntnisstiftend bleibt und wieder auf sportliches Handeln bezogen wird. Etwa zu:</p>
+        <ul>
+          <li>biomechanischen Zusammenhängen,</li>
+          <li>taktischen Entscheidungsprozessen,</li>
+          <li>trainingswissenschaftlichen Prinzipien,</li>
+          <li>gesundheitlichen Wirkungen und Risiken,</li>
+          <li>gesellschaftlichen und ethischen Fragen des Sports,</li>
+          <li>der Beurteilung verschiedener Bewegungs- oder Trainingslösungen,</li>
+          <li>der Auswertung von Video-, Mess- oder Beobachtungsdaten.</li>
+        </ul>
+        <p class="q">Maßstab bleibt: Führt die vertiefte Analyse zu besserem Verständnis, einer begründeteren Entscheidung oder qualifizierterem sportlichen Handeln?</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<hr class="divide">
+
+<!-- RUND MACHEN & REICHWEITE -->
+<section id="rund">
+  <div class="wrap col">
+    <p class="sec-label">Abschluss &amp; Skalierung</p>
+    <h2>Die Stunde „rund machen“</h2>
+    <p class="lead-in">„Jetzt machen wir einen Strich drunter.“ Das ist kein vorschneller Schlusspunkt, sondern eine bewusste Zäsur: Der Lernprozess wird angehalten, geordnet und auf seinen Ertrag geprüft. Die Lernenden kehren — gedanklich und möglichst an konkreten Lernprodukten — zum Ausgangspunkt zurück.</p>
+
+    <details class="acc">
+      <summary><span class="accnum">↩</span>Zurück zur Ausgangsfrage — die Bilanz<span class="chev">⌄</span></summary>
+      <div class="accbody">
+        <ul>
+          <li>Was wollten wir zu Beginn herausfinden oder verbessern?</li>
+          <li>Welches Problem haben wir bearbeitet?</li>
+          <li>Welche Lösungswege haben wir ausprobiert?</li>
+          <li>Was hat funktioniert und warum? Was noch nicht?</li>
+          <li>Welche Lösung bzw. welcher Zwischenstand ist entstanden?</li>
+          <li>Welche drei oder vier Kernpunkte bleiben?</li>
+        </ul>
+        <p>Der Lernzuwachs wird sichtbar, indem die Lernenden ihre anfänglichen Vorstellungen mit dem aktuellen Erkenntnis- oder Könnensstand vergleichen. Ergebnisse werden nicht nur wiederholt, sondern geordnet, präzisiert, eingeordnet — und möglichst von den Lernenden selbst belegt.</p>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><span class="accnum">✓</span>Formen der Sicherung im Sport<span class="chev">⌄</span></summary>
+      <div class="accbody">
+        <ul>
+          <li>eine abschließende Spielsituation,</li>
+          <li>eine Demonstration der entwickelten Lösung,</li>
+          <li>der Vergleich zweier Bewegungsausführungen,</li>
+          <li>eine Kriterienliste,</li>
+          <li>ein kurzes Statement oder eine Partnererklärung,</li>
+          <li>ein Standbild oder eine Videosequenz,</li>
+          <li>eine erneute Anwendung unter veränderten Bedingungen.</li>
+        </ul>
+        <p>Der Kreis schließt sich damit nicht allein sprachlich, sondern zwischen Problemstellung, praktischem Handeln, Reflexion und erneutem sportlichen Können.</p>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><span class="accnum">⧗</span>Stunde, Doppelstunde oder Lerneinheit — Mikro &amp; Makro<span class="chev">⌄</span></summary>
+      <div class="accbody">
+        <p>Die Grafik ist kein Zeitraster. Wie bei Leisen meint die Lernlinie eine inhaltlich zusammenhängende <b>Lerneinheit</b> — nicht automatisch 45 oder 60 Minuten. Eine Schleife kann in einem Stundenabschnitt durchlaufen werden oder sich über eine ganze Reihe erstrecken. Die Spirale bezieht sich auf:</p>
+        <ul>
+          <li>einen kurzen Abschnitt innerhalb einer Stunde,</li>
+          <li>eine vollständige Einzelstunde,</li>
+          <li>eine Doppelstunde,</li>
+          <li>mehrere aufeinander aufbauende Stunden,</li>
+          <li>eine Unterrichtsreihe oder ein Unterrichtsvorhaben.</li>
+        </ul>
+        <h4>Mikro- vs. Makroabschluss</h4>
+        <p>Der <b>Mikroabschluss</b> sichert den Stand eines Teilabschnitts oder einer Einzelstunde: „Was ist unser Zwischenstand, woran arbeiten wir nächste Stunde weiter?“ Der <b>Makroabschluss</b> führt am Ende einer längeren Lernlinie zum ursprünglichen Problem zurück und bündelt den über mehrere Stunden erreichten Kompetenzzuwachs. Die geschlossene, idealtypische 45-Minuten-Stunde bleibt so ein Sonderfall — das Modell ist variabel anwendbar.</p>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -486,6 +711,49 @@
 
 <hr class="divide">
 
+<!-- AUSBILDUNG & PRÜFUNG -->
+<section id="ausbildung">
+  <div class="wrap col">
+    <p class="sec-label">Für Ausbildung &amp; Prüfung</p>
+    <h2>Die idealtypische Stunde — und ihr Grenzwert</h2>
+    <p class="lead-in">Im Vorbereitungsdienst sollen Unterrichtsbesuche und Prüfungsstunden exemplarisch zeigen, wie eine Lehrkraft Lernprozesse problemorientiert anbahnt, fachlich strukturiert, diagnostisch begleitet und zu einem erkennbaren Ergebnis führt. So entstehen bewusst idealtypisch konstruierte Stunden.</p>
+
+    <details class="acc">
+      <summary><span class="accnum">★</span>Was eine idealtypische Stunde sichtbar macht<span class="chev">⌄</span></summary>
+      <div class="accbody">
+        <ul>
+          <li>eine klare Problemstellung,</li>
+          <li>ein erkennbarer roter Faden,</li>
+          <li>eigenständiges Handeln der Lernenden,</li>
+          <li>eine kriteriengeleitete Reflexion,</li>
+          <li>adaptive Weiterarbeit,</li>
+          <li>ein nachvollziehbarer Lernzuwachs,</li>
+          <li>ein inhaltlich begründeter Abschluss.</li>
+        </ul>
+        <p>Solche Stunden bilden den Alltag nicht in jedem Detail ab — Lernprozesse brauchen mitunter mehr Zeit, nehmen unerwartete Richtungen oder führen zunächst nur zu Teilergebnissen. Ihr Ausbildungswert liegt darin, die Logik problem- und kompetenzorientierten Unterrichts bewusst zu planen und in konzentrierter Form zu zeigen. Entscheidend ist, diese Idealstruktur anschließend flexibel auf die Realität zu übertragen — nicht als Ritual jeder einzelnen Stunde.</p>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><span class="accnum">?</span>Die Spirale als Prüf- und Denkraster<span class="chev">⌄</span></summary>
+      <div class="accbody">
+        <p>Sie ist keine Schablone, sondern eine Denk- und Visualisierungshilfe. Mit ihr lässt sich prüfen:</p>
+        <ul>
+          <li>Wo beginnt der Lernprozess? Was ist das fachliche Problem?</li>
+          <li>Welche Vorstellungen bringen die Lernenden ein?</li>
+          <li>Welches sportpraktische Lernprodukt soll entstehen?</li>
+          <li>Woran wird Qualität erkannt?</li>
+          <li>Wann und wie wird reflektiert?</li>
+          <li>Welche didaktische Entscheidung folgt aus dem Zwischenstand?</li>
+          <li>Wie wird der Lernzuwachs gesichert? Wo erfolgt Anwendung oder Transfer?</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</section>
+
+<hr class="divide">
+
 <!-- DISCLAIMER / REICHWEITE -->
 <section id="grenzen">
   <div class="wrap col">
@@ -512,7 +780,16 @@
           </ul>
         </div>
       </div>
-      <p class="fine">In Anlehnung an E. Schlecht (2011) und den Referenzrahmen Schulqualität NRW (MSB, 2020). Der Kompetenzbegriff folgt Weinert (2001). Das Schema versteht sich als Planungshilfe für den erziehenden Sportunterricht, nicht als normative Vorgabe.</p>
+
+      <p class="k" style="margin-top:1.7rem">Didaktische Leitplanken</p>
+      <details class="acc"><summary><span class="accnum">1</span>Kein starres Artikulationsschema<span class="chev">⌄</span></summary><div class="accbody"><p>Nicht jede Stunde muss alle Elemente gleich ausführlich enthalten. Einzelne Schritte können sehr kurz sein, ineinander übergehen oder über mehrere Stunden verteilt werden.</p></div></details>
+      <details class="acc"><summary><span class="accnum">2</span>Problemorientierung nicht inszenieren<span class="chev">⌄</span></summary><div class="accbody"><p>Die Problemfrage sollte für die Lernenden tatsächlich bearbeitbar und sportpraktisch bedeutsam sein. Wird die vermeintlich offene Frage nur gestellt, damit die Klasse die bereits feststehende Antwort reproduziert, verliert die Problemorientierung ihre Funktion.</p></div></details>
+      <details class="acc"><summary><span class="accnum">3</span>Reflexion muss handlungswirksam bleiben<span class="chev">⌄</span></summary><div class="accbody"><p>Nicht jede Beobachtung braucht ein Plenumsgespräch. Oft reichen kurzer Partneraustausch, Demonstration, Beobachtungsauftrag oder erneute Erprobung. Besonders in der Sek I gilt: so knapp wie möglich, so ausführlich wie nötig.</p></div></details>
+      <details class="acc"><summary><span class="accnum">4</span>Lernprodukte sichtbar und vergleichbar machen<span class="chev">⌄</span></summary><div class="accbody"><p>Sportpraktisches Handeln allein macht den Lernprozess nicht automatisch nachvollziehbar. Es braucht Kriterien, Beobachtungsschwerpunkte oder Darstellungsformen, durch die unterschiedliche Lösungen erkannt und beurteilt werden können.</p></div></details>
+      <details class="acc"><summary><span class="accnum">5</span>Sicherung ist keine Lehrkraftzusammenfassung<span class="chev">⌄</span></summary><div class="accbody"><p>Die Lehrkraft kann ordnen und präzisieren. Der Lernzuwachs sollte jedoch möglichst durch Beiträge, Demonstrationen und Belege der Lernenden sichtbar werden — unter deren Einbezug und Dominanz.</p></div></details>
+      <details class="acc"><summary><span class="accnum">6</span>Bewegung und Erkenntnis nicht gegeneinander ausspielen<span class="chev">⌄</span></summary><div class="accbody"><p>Weder ein theoriezentrierter Sportunterricht noch eine reflexionslose Maximierung von Bewegungszeit. Ziel ist die fachlich begründete Verbindung von Bewegung, Erfahrung, Erkenntnis und erneutem Handeln.</p></div></details>
+
+      <p class="fine">In Anlehnung an das Lehr-Lern-Modell nach J. Leisen sowie E. Schlecht (2011), QUA-LiS NRW und den Referenzrahmen Schulqualität NRW (MSB, 2020). Der Kompetenzbegriff folgt Weinert (2001). Die sportdidaktische Problem-, Lern- und Reflexionsspirale versteht sich als fachbezogene Konkretisierung und Planungshilfe, nicht als normative Vorgabe.</p>
     </div>
   </div>
 </section>
@@ -528,7 +805,7 @@
     </div>
     <div class="foot-meta">
       © 2026 Straight&#8202;X&#8202;edge Media<br>
-      Grafik: Ralf Duwenbeck · v 1.1.2
+      Grafik: Ralf Duwenbeck · v 1.2.0
     </div>
   </div>
 </footer>
