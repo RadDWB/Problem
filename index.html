@@ -57,7 +57,7 @@
     "url": "https://sportunterricht.eu"
   },
   "image": "https://sportunterricht.eu/problemorientierung/problemorientierung.png",
-  "version": "1.3.1"
+  "version": "1.3.2"
 }
 </script>
 <style>
@@ -179,6 +179,12 @@
   p{margin:0 0 1.1rem}
   .muted{color:var(--ink-soft)}
   .pull{font-style:italic;font-size:1.14rem;line-height:1.5;color:var(--ink);border-left:3px solid var(--flame);padding-left:1.1rem;margin:1.3rem 0}
+  .readmore-hint{font-family:"Helvetica Neue",Arial,sans-serif;font-size:.82rem;letter-spacing:.02em;color:var(--ink-soft);margin:.2rem 0 .6rem}
+  .callout{background:linear-gradient(135deg,#fff4ec,#ffffff);border:1px solid #ffcdb2;border-left:5px solid var(--flame);border-radius:14px;padding:1.5rem 1.6rem;margin:1.9rem 0;box-shadow:var(--shadow)}
+  .callout .k{font-family:"Helvetica Neue",Arial,sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--flame-deep);margin:0 0 .55rem}
+  .callout .big{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:800;font-size:1.3rem;line-height:1.3;color:var(--ink);margin:0 0 .6rem;letter-spacing:-.01em}
+  .callout p{color:var(--ink-soft);font-size:1rem;margin:0}
+  @media(max-width:560px){.callout .big{font-size:1.14rem}}
 
   .divide{border:0;border-top:1px solid var(--line);margin:0}
 
@@ -437,6 +443,10 @@
     <p class="sec-label">Worum es geht</p>
     <h2>Eine Stunde „von hinten“ planen — der gewünschte Output bestimmt die Herangehensweise!!</h2>
     <p class="muted">Der Ausgangspunkt jeder Planung ist nicht die Frage: „Was machen wir heute?“, sondern: „Was soll hinten bei der Stunde herauskommen?“ Oder, etwas salopper gefragt: „Was steht am Ende unterm Strich?“</p>
+
+    <details class="acc grundidee-acc">
+      <summary><span class="accnum">＋</span>Zum Weiterlesen ausklappen<span class="chev">⌄</span></summary>
+      <div class="accbody">
     <p class="muted">Der Unterricht wird um ein fachlich bedeutsames Problem, eine Lernfrage oder eine konkrete sportpraktische Herausforderung herum organisiert. Deren Bearbeitung soll zu einer wahrnehmbaren Verbesserung, einer nachvollziehbaren Erkenntnis oder einer begründeteren sportlichen Entscheidung führen. Reine Übungs- oder Spielphasen, bei denen nicht erkennbar wird, was die Schülerinnen und Schüler dadurch besser können, genauer verstehen oder bewusster wahrnehmen, reichen dafür auf Dauer nicht aus.</p>
     <p class="muted">Konkret heißt das: Am Ende der Stunde sollte ein Ergebnis stehen, das die Lernenden mitnehmen können. Etwas zugespitzt muss sich die Lehrkraft fragen:</p>
     <p class="pull">Warum hat es sich gelohnt, dass diese Schülerinnen und Schüler eine Stunde ihres Lebens in diesen Unterricht investiert haben?</p>
@@ -444,10 +454,17 @@
     <p class="muted">Die investierte Unterrichtszeit sollte deshalb einen erkennbaren Mehrwert im Sinne eines Lernzuwachses erzeugen: Ein Problem wird bearbeitet, eine Lösung erprobt, ein Ergebnis gesichert und möglichst auf andere Situationen übertragen. Die Schülerinnen und Schüler können, wissen, verstehen, beurteilen oder gestalten anschließend etwas, das vorher so noch nicht vorhanden oder ihnen zumindest noch nicht bewusst war.</p>
     <p class="muted">Das müssen keine tiefschürfenden theoretischen Erkenntnisse sein. Häufig geht es um kleine, aber fachlich bedeutsame Zusammenhänge oder Teilaspekte, die sich gerade durch das praktische Erleben erschließen. Was unterscheidet beispielsweise Hängen, Hangeln und Schwingen? Wie lassen sich diese <span class="term" tabindex="0" role="button" aria-describedby="tip-fertigkeit">Fertigkeiten<span class="tip" role="tooltip" id="tip-fertigkeit"><strong>Fähigkeit vs. Fertigkeit</strong><span class="tl">Im sportlichen Sinn sind <b>Fähigkeiten</b> die allgemeinen Voraussetzungen für Bewegung, also eher grundlegende Leistungsvoraussetzungen wie Kraft, Schnelligkeit, Ausdauer oder Koordination. <b>Fertigkeiten</b> sind dagegen erlernte, geübte und meist automatisierte Bewegungsabläufe, etwa ein sauberer Handstand, Kraulschwimmen oder ein Korbleger.</span><strong>Einfacher Merksatz</strong><span class="tll"><b>Fähigkeiten</b> = das Potenzial bzw. die Grundlage.</span><span class="tll"><b>Fertigkeiten</b> = die konkret ausgeführte, gelernte Bewegung.</span></span></span> verbessern? Was erleichtert oder hemmt die Bewegung? Welche biomechanischen Zusammenhänge werden sichtbar und welche anatomischen Strukturen sind beteiligt?</p>
     <p class="muted">Dabei muss nicht jede Frage vollständig beantwortet werden. Auch ein präzise erarbeiteter Teilaspekt kann einen echten Lernertrag darstellen. Entscheidend ist, dass etwas Neues entstanden ist: eine verbesserte Bewegung, eine bewusstere Wahrnehmung, eine tragfähigere Lösung oder eine nachvollziehbare Erkenntnis. Genau das soll am Ende im Wortsinn „hängen bleiben“ und später erneut aufgegriffen, übertragen oder angewendet werden können.</p>
-    <p class="muted">Das Modell ist dabei kein verpflichtendes Schema für jede einzelne Sportstunde. Es beschreibt <b>eine von mehreren möglichen Bauweisen</b> – besonders geeignet für Stunden oder Lernabschnitte, die einer Problemstellung folgen und nicht lediglich offen auslaufen sollen. Die dargestellte Lernbewegung kann sich innerhalb einer kurzen Unterrichtsphase, einer Einzel- oder Doppelstunde oder auch über mehrere Stunden hinweg entfalten.</p>
     <p class="muted">Der besondere Reiz liegt darin, dass Anfang und Ende bewusst aufeinander bezogen werden. Die Stunde beginnt mit einer Frage, einer Irritation oder einem sportpraktischen Problem. Am Ende kehrt sie genau dorthin zurück:</p>
     <p class="pull">Was wollten wir herausfinden oder verbessern? Was haben wir erprobt? Was ist dabei herausgekommen? Und woran können wir erkennen, dass wir nun tatsächlich weiter sind?</p>
     <p class="muted">So wird der rote Faden nicht nur von der Lehrkraft geplant, sondern für die Lernenden sichtbar geschlossen.</p>
+      </div>
+    </details>
+
+    <div class="callout">
+      <p class="k">Wichtig — bitte beachten</p>
+      <p class="big">Das Modell ist kein verpflichtendes Schema für jede einzelne Sportstunde.</p>
+      <p>Es beschreibt <b>eine von mehreren möglichen Bauweisen</b> – besonders geeignet für Stunden oder Lernabschnitte, die einer Problemstellung folgen und nicht lediglich offen auslaufen sollen. Die dargestellte Lernbewegung kann sich innerhalb einer kurzen Unterrichtsphase, einer Einzel- oder Doppelstunde oder auch über mehrere Stunden hinweg entfalten.</p>
+    </div>
 
     <figure class="infofig">
       <img src="Kernproblem1.png" alt="Das Kernproblem – vom bloßen Tun zum echten Lernertrag. Links „Nur Aktivität“ (Basketball gespielt, geübt, etwas gemacht – beschreibt nur Tätigkeit), rechts „Echter Lernertrag“ (Was können die Lernenden jetzt besser? Was haben sie verstanden? Welches Problem wurde gelöst? Welche drei bis vier Kernpunkte bleiben? – beschreibt Kompetenzzuwachs), verbunden durch die Frage „Was ist am Ende wirklich herausgekommen?“. Darunter die Abendbrotfrage und der Leitsatz „Guter Sportunterricht plant vom Lernertrag her“." loading="lazy">
@@ -890,7 +907,7 @@
     </div>
     <div class="foot-meta">
       © 2026 Straight&#8202;X&#8202;edge Media<br>
-      Grafik: Ralf Duwenbeck · v 1.3.1
+      Grafik: Ralf Duwenbeck · v 1.3.2
     </div>
     <nav class="foot-links" aria-label="Rechtliches und Unterstützung">
       <button type="button" data-modal="modal-impressum" aria-haspopup="dialog">Impressum &amp; Nutzung</button>
