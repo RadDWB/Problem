@@ -57,7 +57,7 @@
     "url": "https://sportunterricht.eu"
   },
   "image": "https://sportunterricht.eu/problemorientierung/problemorientierung.png",
-  "version": "1.2.1"
+  "version": "1.2.2"
 }
 </script>
 <style>
@@ -314,6 +314,12 @@
   /* Formel-Band */
   .formula{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:800;color:var(--ink);text-align:center;background:var(--sand);border:1px dashed var(--line-strong);border-radius:12px;padding:1rem 1.2rem;margin:1.2rem 0;letter-spacing:.01em}
   .formula b{color:var(--flame-deep)}
+
+  /* Zweispaltiger Kopf mit Bild (Stunde rund machen) */
+  .rundhead{display:grid;grid-template-columns:1fr 210px;gap:1.8rem;align-items:center;margin-bottom:1.8rem}
+  @media(max-width:640px){.rundhead{grid-template-columns:1fr;justify-items:start}.rundhead .rundfig{max-width:240px}}
+  .rundfig{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:.7rem;box-shadow:var(--shadow)}
+  .rundfig img{width:100%;border-radius:8px;display:block}
 
   /* reveal */
   .rise{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
@@ -580,8 +586,10 @@
     <div class="grid3">
       <div class="zcard accent"><div class="zk">Kern</div><h4>Bewegungszeit</h4><p>Die Lernenden sind selbst motorisch tätig: spielen, laufen, springen, turnen, schwimmen, kämpfen, tanzen, gestalten, trainieren. Der unverzichtbare Kern des Fachs.</p></div>
       <div class="zcard"><div class="zk">Fachlich</div><h4>Aktivitätszeit</h4><p>Planen, beobachten, vergleichen, Kriterien entwickeln, Regeln verändern, auf dem Spielfeld tüfteln — handlungsbezogene fachliche Lernzeit, auch ohne ständige intensive Motorik. Keine „verlorene Bewegungszeit“.</p></div>
-      <div class="zcard"><div class="zk">Sparsam</div><h4>Sitz- / Theoriezeit</h4><p>Überwiegend sitzendes, von der Lehrkraft geleitetes Gespräch; die Praxis ruht. Mitunter nötig — in der Sek I aber kurz und auf eine klare Frage konzentriert.</p></div>
+      <div class="zcard"><div class="zk">Sparsam</div><h4>Sitz- / Theoriezeit</h4><p>Überwiegend sitzend; die Praxis ruht kurz. <b>Nicht lehrerzentriert</b>: Die Lehrkraft stößt das Gespräch nur an und moderiert — entwickelt wird es fragend von den Lernenden. In der Sek I knapp und auf eine klare Frage fokussiert.</p></div>
     </div>
+
+    <p class="muted" style="font-size:.94rem;margin:.2rem 0 0"><b>So ist das Gespräch gemeint:</b> Die Lehrkraft wirft das Gesprächsknäuel in die Gruppe, die Lernenden werfen es sich zu — nur ab und zu nimmt sie es wieder in die Hand. Initiiert und moderiert, aber nie lehrerzentriert.</p>
 
     <div class="formula">Bewegungszeit &nbsp;–&nbsp; Aktivitätszeit &nbsp;–&nbsp; gezielte <b>Reflexionszeit</b></div>
 
@@ -623,9 +631,14 @@
 <!-- RUND MACHEN & REICHWEITE -->
 <section id="rund">
   <div class="wrap col">
-    <p class="sec-label">Abschluss &amp; Skalierung</p>
-    <h2>Die Stunde „rund machen“</h2>
-    <p class="lead-in">„Jetzt machen wir einen Strich drunter.“ Das ist kein vorschneller Schlusspunkt, sondern eine bewusste Zäsur: Der Lernprozess wird angehalten, geordnet und auf seinen Ertrag geprüft. Die Lernenden kehren — gedanklich und möglichst an konkreten Lernprodukten — zum Ausgangspunkt zurück.</p>
+    <div class="rundhead">
+      <div>
+        <p class="sec-label">Abschluss &amp; Skalierung</p>
+        <h2 style="margin-bottom:.8rem">Die Stunde „rund machen“</h2>
+        <p class="lead-in" style="margin-bottom:0">„Jetzt machen wir einen Strich drunter.“ Das ist kein vorschneller Schlusspunkt, sondern eine bewusste Zäsur: Der Lernprozess wird angehalten, geordnet und auf seinen Ertrag geprüft. Die Lernenden kehren — gedanklich und möglichst an konkreten Lernprodukten — zum Ausgangspunkt zurück.</p>
+      </div>
+      <figure class="rundfig"><img src="strich-drunter.png" alt="Handgemalter Schriftzug: Jetzt machen wir mal einen Strich drunter" loading="lazy"></figure>
+    </div>
 
     <details class="acc">
       <summary><span class="accnum">↩</span>Zurück zur Ausgangsfrage — die Bilanz<span class="chev">⌄</span></summary>
@@ -805,7 +818,7 @@
     </div>
     <div class="foot-meta">
       © 2026 Straight&#8202;X&#8202;edge Media<br>
-      Grafik: Ralf Duwenbeck · v 1.2.1
+      Grafik: Ralf Duwenbeck · v 1.2.2
     </div>
   </div>
 </footer>
