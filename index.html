@@ -18,16 +18,16 @@
 <meta property="og:locale" content="de_DE">
 <meta property="og:url" content="https://sportunterricht.eu/problemorientierung/">
 <meta property="og:title" content="Der problemorientierte Stundenaufbau — rückwärts geplant">
-<meta property="og:description" content="Vom Ergebnis her denken: das Tischgespräch als Ausgangspunkt, ein Fünf-Phasen-Modell und die tragenden Prinzipien des erziehenden Sportunterrichts.">
+<meta property="og:description" content="Vom Lernertrag her planen: die Abendbrotfrage als Ausgangspunkt, ein Sechs-Phasen-Modell als Spirale und die tragenden Prinzipien des erziehenden Sportunterrichts.">
 <meta property="og:image" content="https://sportunterricht.eu/problemorientierung/problemorientierung.png">
 <meta property="og:image:width" content="1054">
 <meta property="og:image:height" content="1492">
-<meta property="og:image:alt" content="Prinzipielle Struktur einer problemorientierten Sportstunde: fünf Phasen mit dem Tischgespräch als Ausgangspunkt der Rückwärtsplanung.">
+<meta property="og:image:alt" content="Prinzipielle Struktur einer problemorientierten Sportstunde: sechs Phasen mit der Abendbrotfrage als Ausgangspunkt der Rückwärtsplanung.">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Der problemorientierte Stundenaufbau — rückwärts geplant">
-<meta name="twitter:description" content="Vom Ergebnis her denken: das Tischgespräch als Ausgangspunkt, ein Fünf-Phasen-Modell und die tragenden Prinzipien des erziehenden Sportunterrichts.">
+<meta name="twitter:description" content="Vom Lernertrag her planen: die Abendbrotfrage als Ausgangspunkt, ein Sechs-Phasen-Modell als Spirale und die tragenden Prinzipien des erziehenden Sportunterrichts.">
 <meta name="twitter:image" content="https://sportunterricht.eu/problemorientierung/problemorientierung.png">
 <meta name="twitter:image:alt" content="Prinzipielle Struktur einer problemorientierten Sportstunde.">
 
@@ -37,7 +37,7 @@
   "@context": "https://schema.org",
   "@type": "LearningResource",
   "name": "Problemorientierter Stundenaufbau im erziehenden Sportunterricht",
-  "description": "Rückwärts geplanter, problemorientierter Stundenaufbau: das Tischgespräch als Ausgangspunkt der Planung, ein Fünf-Phasen-Modell, Reflexion und didaktische Einordnung.",
+  "description": "Rückwärts geplanter, problemorientierter Stundenaufbau: die Abendbrotfrage als Ausgangspunkt der Planung, ein Sechs-Phasen-Modell als Spirale, Reflexion und didaktische Einordnung.",
   "url": "https://sportunterricht.eu/problemorientierung/",
   "inLanguage": "de",
   "learningResourceType": "Planungsmodell",
@@ -57,7 +57,7 @@
     "url": "https://sportunterricht.eu"
   },
   "image": "https://sportunterricht.eu/problemorientierung/problemorientierung.png",
-  "version": "1.3.3"
+  "version": "1.4.0"
 }
 </script>
 <style>
@@ -224,9 +224,16 @@
   .phase .num{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:800;font-size:2.1rem;line-height:1;color:#fff;background:var(--flame);border-radius:12px;width:64px;height:64px;display:flex;align-items:center;justify-content:center;align-self:start}
   .phase.p1 .num{background:var(--flame);color:var(--navy)}
   .phase.p2 .num{background:var(--leaf)}
-  .phase.p3 .num{background:var(--navy)}
-  .phase.p4 .num{background:var(--flame-deep)}
-  .phase.p5 .num{background:var(--sea-soft)}
+  .phase.p3 .num{background:var(--blue-deep)}
+  .phase.p4 .num{background:var(--navy)}
+  .phase.p5 .num{background:var(--flame-deep)}
+  .phase.p6 .num{background:var(--sea-soft)}
+
+  /* Rückblick-Band zwischen Diagnose und Abschluss */
+  .rueckblick{display:flex;align-items:center;gap:.9rem;background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-radius:12px;padding:.9rem 1.3rem;box-shadow:var(--shadow)}
+  .rueckblick .rb-ico{flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+  .rueckblick p{margin:0;font-size:.95rem;font-family:"Helvetica Neue",Arial,sans-serif;color:#e7eef5;line-height:1.5}
+  @media(max-width:560px){.rueckblick{flex-direction:column;align-items:flex-start;text-align:left}}
   .phase h3{margin:0 0 .35rem;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1.02rem;letter-spacing:.03em;text-transform:uppercase;color:var(--ink)}
   .phase p{margin:0 0 .5rem;font-size:1rem;color:var(--ink-soft)}
   .phase .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
@@ -562,7 +569,7 @@
     </div>
     <figure class="rise">
       <div class="fig-frame" id="figBtn" role="button" tabindex="0" aria-label="Grafik vergrößern">
-        <img src="problemorientierung.png" alt="Prinzipielle Struktur von Unterrichtsstunden im erziehenden Sportunterricht: fünf Phasen von Einstieg und Problemorientierung über Reflexion, Entscheidung und Abschluss bis zum Ausblick, mit dem Tischgespräch als Ausgangspunkt der Rückwärtsplanung.">
+        <img src="problemorientierung.png" alt="Prinzipielle Struktur von Unterrichtsstunden im erziehenden Sportunterricht: sechs Phasen von Einstieg und Problemorientierung über erste Problembearbeitung, Reflexion und Diagnose bis zu Abschluss, Sicherung und Transfer, mit der Abendbrotfrage als Ausgangspunkt der Rückwärtsplanung.">
       </div>
       <figcaption>Prinzipielle Struktur von Unterrichtsstunden im erziehenden Sportunterricht · nach Ralf Duwenbeck<br>Kein starres Zeitraster — gemeint sind Lerneinheiten, vom Stundenabschnitt bis zur Unterrichtsreihe.</figcaption>
     </figure>
@@ -605,19 +612,20 @@
 <section id="phasen">
   <div class="wrap col">
     <p class="sec-label">Ablauf der Durchführung</p>
-    <h2>Fünf Phasen — als Spirale gelesen</h2>
-    <p class="muted" style="margin-bottom:2rem">In der Durchführung von oben nach unten gelesen. Die fünf Phasen sind keine feste Taktung, sondern <b>Schleifen</b>: handeln, wahrnehmen, reflektieren, entscheiden — und erneut handeln. Jede Phase hat eine Funktion im roten Faden, von der Irritation am Einstieg bis zur Sicherung und zum Transfer.</p>
+    <h2>Sechs Phasen — als Spirale gelesen</h2>
+    <p class="muted" style="margin-bottom:2rem">Gelesen wird die Grafik von oben nach unten. <b>Geplant</b> wird jedoch vom angestrebten Lernertrag her — von dem, was die Lernenden am Ende besser können oder verstehen sollen, zurück zum Einstieg. Die sechs Phasen sind keine feste Taktung, sondern <b>Schleifen</b>: handeln, wahrnehmen, reflektieren, entscheiden, erneut handeln, sichern und übertragen. Jede Phase hat eine Funktion im roten Faden, von der Irritation am Einstieg bis zur Sicherung und zum Transfer.</p>
 
     <div class="phases">
       <article class="phase p1 rise">
         <div class="num">1</div>
         <div>
           <h3>Einstieg / Problemorientierung</h3>
-          <p>Ein Problemaufriss macht neugierig und „verstört“ produktiv: eine Anforderungssituation aus der Lebenswelt der Lernenden, an der eine echte Frage sichtbar wird. Der Aufriss kann auch aus Aspekten entstehen, die schon im Aufwärmen aufgeworfen werden. Daraus wird gemeinsam die Problemfrage entwickelt und geklärt, mit welchem Material und welchen Kriterien sie bearbeitet wird.</p>
+          <p>Ein Problemaufriss macht neugierig und „verstört“ produktiv: eine sportpraktisch bedeutsame Anforderungssituation, an der eine echte Frage sichtbar wird. Daraus wird die Problemfrage entwickelt — und die Lernenden bringen erste Vorstellungen und Lösungsideen ein: Was vermuten wir? Wie könnten wir das Problem bearbeiten?</p>
           <div class="tags">
             <span class="tag">Anknüpfung an ein „altes“ Problem</span>
             <span class="tag">Experiment · Video · Bildimpuls</span>
             <span class="tag">Impuls aus dem Aufwärmen</span>
+            <span class="tag">Vorstellungen &amp; Lösungsideen</span>
           </div>
         </div>
       </article>
@@ -625,12 +633,12 @@
       <article class="phase p2 rise">
         <div class="num">2</div>
         <div>
-          <h3>Erste Erarbeitung & Reflexion</h3>
-          <p>Auf eine klare Aufgabenstellung folgt die erste Erarbeitung (EA 1): Die Lerngruppe bearbeitet das Problem, häufig in verschiedenen Arbeitsgruppen. Schon währenddessen wird reflektiert — mitten im Tun („reflection in action“). Im anschließenden Rückblick (RP 1, „reflection on action“) klären zwei Leitfragen: Was ist gerade genau passiert? Konntet ihr die Aufgabe, unser Problem, so lösen wie ihr solltet? Reflexion ist dabei kein Endpunkt, sondern Gelenkstelle: Sie fragt immer auch <b>„Was folgt daraus für den nächsten Versuch?“</b></p>
+          <h3>Erste Problembearbeitung</h3>
+          <p>Auf die Aufgabenstellung folgt EA&nbsp;1: Die Lernenden erproben ihre Ideen praktisch und erzeugen ein erstes Bewegungs- oder Lernprodukt — eine veränderte Ausführung, eine taktische Lösung, eine Regel, eine Kriterienliste. Schon dabei wird reflektiert: mitten im Tun wird Wahrgenommenes unmittelbar angepasst.</p>
           <div class="tags">
-            <span class="tag hot">EA 1 — erste Erarbeitung</span>
-            <span class="tag">reflection in action · Arbeitsgruppen</span>
-            <span class="tag hot">RP 1 — reflection on action</span>
+            <span class="tag hot">EA 1 — erste Problembearbeitung</span>
+            <span class="tag">reflection in action</span>
+            <span class="tag">Bewegungs-/Lernprodukt</span>
           </div>
         </div>
       </article>
@@ -638,17 +646,35 @@
       <article class="phase p3 rise">
         <div class="num">3</div>
         <div>
-          <h3>Entscheidung / Verzweigung</h3>
-          <p>Der Knotenpunkt der Stunde. Ob das Problem gelöst ist, wird an <b>transparenten Kriterien</b> entschieden — ein pauschales „Es hat funktioniert“ genügt nicht. Die Lernenden müssen erkennen können, was schon trägt, wo es hakt und woran sie das festmachen. Unser knappes <b>„Ja / Jein / Nein“</b> ist die einprägsame Kurzform genau dieser diagnostischen Entscheidung.</p>
-          <div class="branch">
-            <b>Ja</b> → Ergebnisse sichten, ggf. Präsentation. &nbsp;•&nbsp; <b>Jein / Nein</b> → Ursachenforschung: Was brauchen wir, um das Problem zu lösen? → zweite Erarbeitung (EA 2) mit mehr oder anderem Material, modifizierter Aufgabenstellung → erneute Reflexion (RP 2) → zurück zur Entscheidung.
+          <h3>Reflexion und erste Diagnose</h3>
+          <p>Mit Abstand zum Handeln folgt RP&nbsp;1. Zwei Leitfragen: Was ist gerade genau passiert? Konnten wir die Aufgabe so lösen, wie wir sollten? Reflexion ist kein Endpunkt, sondern Gelenkstelle — sie fragt immer auch <b>„Was folgt daraus für den nächsten Versuch?“</b> Gerade in der Sek&nbsp;I gilt: so kurz wie möglich, so ausführlich wie nötig.</p>
+          <div class="tags">
+            <span class="tag hot">RP 1 — reflection on action</span>
+            <span class="tag">Gelenkstelle</span>
+            <span class="tag">Primat der Bewegung</span>
           </div>
-          <p style="margin-top:.7rem;font-size:.94rem">Mögliche Konsequenzen aus der Diagnose: Lösung erneut anwenden · Kriterien präzisieren · Aufgabe vereinfachen oder erschweren · Material verändern · Gruppengröße oder Raum anpassen · neuen Beobachtungsschwerpunkt setzen · Bewegung unter veränderten Bedingungen erproben · Lösungen vergleichen.</p>
         </div>
       </article>
 
       <article class="phase p4 rise">
         <div class="num">4</div>
+        <div>
+          <h3>Diagnose / Verzweigung</h3>
+          <p>Der zentrale Entscheidungsknoten: Inwieweit wurde das Problem gelöst? Entschieden wird an <b>transparenten Kriterien</b>, nicht am pauschalen Eindruck „Das hat funktioniert“. Unser knappes <b>„Ja / Jein / Nein“</b> ist die griffige Kurzform dieser diagnostischen Entscheidung.</p>
+          <div class="branch">
+            <b>Ja</b> → Ergebnisse sichten, ggf. Präsentation. &nbsp;•&nbsp; <b>Jein / Nein</b> → Ursachenforschung: Was hindert uns noch daran, das Problem tragfähig zu lösen? → EA&nbsp;2 mit mehr oder anderem Material, modifizierter Aufgabenstellung → RP&nbsp;2 → zurück zur Diagnose.
+          </div>
+          <p style="margin-top:.7rem;font-size:.94rem">Mögliche Konsequenzen: Lösung erneut anwenden · Kriterien präzisieren · Aufgabe vereinfachen oder erschweren · Material verändern · Gruppengröße oder Raum anpassen · neuen Beobachtungsschwerpunkt setzen · Bewegung unter veränderten Bedingungen erproben · Lösungen vergleichen.</p>
+        </div>
+      </article>
+
+      <div class="rueckblick rise">
+        <span class="rb-ico" aria-hidden="true">👁</span>
+        <p>Rückblick — Was war unser Problem, wie sieht unsere Lösung aus, und woran erkennen wir den Lernfortschritt?</p>
+      </div>
+
+      <article class="phase p5 rise">
+        <div class="num">5</div>
         <div>
           <h3>Abschluss / Sicherung / Anwendung</h3>
           <p>Der wichtigste Punkt. „Machen wir einen Strich drunter!“ — Rückkehr zum Beginn: Was war unser Problem, und wie sieht die Lösung aus? Die Erkenntnisse werden auf wenige Kernpunkte gebündelt (z.&nbsp;B. drei), gesichert und angewendet. Die Bündelung geschieht <b>unter Einbezug und Dominanz der Lernenden</b>: Ein „Heute habt ihr gelernt, dass …“ der Lehrkraft genügt nicht — ohne eigene Einsicht kein Ergebnis. Die Schülerinnen und Schüler sollen selbst formulieren, demonstrieren oder belegen können, worin ihr Lernzuwachs besteht.</p>
@@ -661,12 +687,13 @@
         </div>
       </article>
 
-      <article class="phase p5 rise">
-        <div class="num">5</div>
+      <article class="phase p6 rise">
+        <div class="num">6</div>
         <div>
-          <h3>Ausblick / Transfer</h3>
-          <p>Der Bogen öffnet sich wieder: Ein Ausblick oder ein neues Problem verbindet die Stunde mit der nächsten und hält die Kontinuität der Lernreihe. So wird aus einer Einzelstunde ein Abschnitt eines Lernwegs.</p>
+          <h3>Transfer / Ausblick</h3>
+          <p>Transfer ist mehr als Wiederholung: Kann das Gelernte auch unter veränderten Bedingungen genutzt werden — neue Spielsituation, mehr Gegnerdruck, andere Geräte, eine andere Sportart? Anders als die Anwendung in Phase&nbsp;5, die das Ergebnis am selben Gegenstand festigt, verlangt der Transfer den Schritt in einen erkennbar veränderten Kontext. Daraus kann sich ein neues Problem ergeben, das die Stunde mit der nächsten verbindet.</p>
           <div class="tags">
+            <span class="tag">Transfer ≠ Anwendung</span>
             <span class="tag">Advance Organizer</span>
             <span class="tag">Lerntreppe · H5P</span>
             <span class="tag">Problem der nächsten Stunde</span>
@@ -921,7 +948,7 @@
     </div>
     <div class="foot-meta">
       © 2026 Straight&#8202;X&#8202;edge Media<br>
-      Grafik: Ralf Duwenbeck · v 1.3.3
+      Grafik: Ralf Duwenbeck · v 1.4.0
     </div>
     <nav class="foot-links" aria-label="Rechtliches und Unterstützung">
       <button type="button" data-modal="modal-impressum" aria-haspopup="dialog">Impressum &amp; Nutzung</button>
